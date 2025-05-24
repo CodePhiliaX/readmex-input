@@ -1,18 +1,18 @@
+import "./main.css";
+
 interface IProps {
-  token: string;
+  token?: string;
 }
 
 interface ReadmexChat {
-  initReadmexChat: (props: IProps) => void;
+  initReadmexChat: (props?: IProps) => void;
 }
 
 interface Window {
   ReadmexChat?: ReadmexChat;
 }
 
-function initReadmexChat(props: IProps) {
-  const { token } = props;
-  console.log("ReadmexChat token: ", token);
+function initReadmexChat(props?: IProps) {
 
   if (typeof document === "undefined") {
     return;
@@ -20,7 +20,7 @@ function initReadmexChat(props: IProps) {
 
   // 创建挂载点
   const elm = document.createElement("div");
-  elm.className = "readmex-chat-box";
+  elm.className = "readmex-input-box";
   document.body.appendChild(elm);
 
   // 创建form元素
@@ -64,10 +64,13 @@ function initReadmexChat(props: IProps) {
     const message = textarea.value.trim();
     if (!message) return;
 
-    const a = 'https://www.cnblogs.com/changelzj/p/18893870';
-    window.location.href = `http://localhost:3333/interlayer?url=${encodeURIComponent(a)}&input=${encodeURIComponent(message)}`;
+    if(!props?.token) {
+      const a = 'https://www.cnblogs.com/changelzj/p/18893870';
+      window.location.href = `http://localhost:3333/interlayer?url=${encodeURIComponent(a)}&input=${encodeURIComponent(message)}`;
+    }else {
+      window.open(`https://readmex.com/interlayer?url=${encodeURIComponent(window.location.href)}&input=${encodeURIComponent(message)}`, '_blank');
+    }
 
-    // window.open(`https://readmex.com/interlayer?url=${encodeURIComponent(a)}&input=${encodeURIComponent(message)`, '_blank');
     textarea.value = '';
   });
 }

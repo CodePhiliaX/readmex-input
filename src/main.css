@@ -1,5 +1,6 @@
-.readmex-chat-box{
+.readmex-input-box{
   width: 783px;
+  max-width: 90%;
   position: fixed;
   bottom: 40px;
   left: 50%;

@@ -3,9 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/readmex-chat.umd.js",
-  "module": "./dist/readmex-chat.es.js",
-  "types": "./dist/readmex-chat.es.d.ts",
+  "main": "./dist/readmex-input.umd.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

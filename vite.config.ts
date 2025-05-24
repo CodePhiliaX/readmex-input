@@ -5,8 +5,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/main.ts', // 入口文件
-      name: 'ReadmexChat', // 库的全局变量名
-      fileName: (format) => `readmex-chat.${format}.js`, // 输出文件名
+      name: 'ReadmexInput', // 库的全局变量名
+      fileName: (format) => `readmex-input.${format}.js`, // 输出文件名
       formats: ['es', 'umd'], // 输出格式
     },
     rollupOptions: {
