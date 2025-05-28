@@ -46,9 +46,28 @@ function initReadmexChat(props?: IProps) {
     }
   });
 
+  // 创建发送按钮容器
   const sendBox = document.createElement("div");
-  sendBox.style.display = "flex";
-  sendBox.style.justifyContent = "flex-end";
+  sendBox.className = "readmex-send-box";
+
+  // 创建 readmex 标识
+  const readmexLogo = document.createElement("div");
+  readmexLogo.className = "readmex-logo-box";
+
+  // 创建一个文字
+  const logoText = document.createElement("span");
+  logoText.textContent = "Powered  by ";
+  logoText.className = "readmex-logo-text";
+
+  // 创建图片
+  const logoImg = document.createElement("img");
+  logoImg.src = "https://cdn.chat2db-ai.com/img/readmex.svg";
+  logoImg.alt = "Readmex Logo";
+  logoImg.className = "readmex-logo-img";
+
+  readmexLogo.appendChild(logoText);
+  readmexLogo.appendChild(logoImg);
+  sendBox.appendChild(readmexLogo);
   form.appendChild(sendBox);
 
   // 创建按钮
